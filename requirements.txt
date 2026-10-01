@@ -1,0 +1,6 @@
+# Core dependencies used by the current CPU benchmark and analysis scripts.
+# Recorded experiment package versions are unknown; no speculative pins.
+torch
+transformers
+pandas
+matplotlib
