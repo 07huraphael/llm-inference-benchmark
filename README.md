@@ -100,3 +100,19 @@ llm-inference-benchmark/
 │
 ├── .gitignore
 └── README.md
+
+## Thermal and Power Investigation
+
+Large run-to-run variations in CPU inference performance led to a follow-up investigation of CPU temperature, effective clock, and power limits.
+
+The experiment found:
+
+- No thermal throttling during the measured LLM runs
+- CPU temperature remained near 70 °C
+- Throughput varied from 3.95 to 8.30 tokens/sec
+- Dynamic PL1 remained at 12 W
+- Effective CPU clock showed a strong positive association with LLM throughput
+
+The result did not support the original thermal-throttling hypothesis and motivated a new investigation into sustained CPU power limits.
+
+[Read the full thermal experiment](thermal/README.md)
