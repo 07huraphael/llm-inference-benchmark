@@ -59,8 +59,10 @@ generated_tokens = (
 
 elapsed = end - start
 
+new_tokens = outputs[0][inputs["input_ids"].shape[1]:]
+
 generated_text = tokenizer.decode(
-    outputs[0],
+    new_tokens,
     skip_special_tokens=True
 )
 
