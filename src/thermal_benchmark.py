@@ -1,6 +1,7 @@
 import time
 import csv
 from datetime import datetime
+from pathlib import Path
 
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
@@ -156,10 +157,11 @@ for run in range(1, REPEATS + 1):
 # CSV 저장
 # -----------------------------
 
-csv_path = (
+csv_path = Path(
     "thermal/results/"
     "llm_thermal_benchmark.csv"
 )
+csv_path.parent.mkdir(parents=True, exist_ok=True)
 
 
 with open(
